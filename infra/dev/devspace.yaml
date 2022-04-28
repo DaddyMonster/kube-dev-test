@@ -9,12 +9,15 @@ images:
   #        skipPush: true
   may-journey-web:
     image: localhost:4800/may-journey-web
+    tags:
+      - local-${devspace.git.commit}
     cmd: [yarn, nx, run, web-journey:serve]
     build:
       buildKit:
         skipPush: true
   api-gateway:
     image: localhost:4800/may-server-gateway
+      - local-${devspace.git.commit}
     cmd: [yarn, nx, run, server-gateway:serve]
     build:
       buildKit:
@@ -28,7 +31,6 @@ deployments:
     helm:
       chart:
         name: "./infra/helm/server-gateway"
-
 
 dev:
   # `dev.ports` specifies all ports that should be forwarded while `devspace dev` is running
