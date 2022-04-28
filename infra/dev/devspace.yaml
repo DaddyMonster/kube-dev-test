@@ -12,14 +12,20 @@ images:
     tags:
       - local-${devspace.git.commit}
     cmd: [yarn, nx, run, web-journey:serve]
-    #build:
-      #buildKit:
+    context: './'
+    build:
+      buildKit:
+        inCluster: {}
         #skipPush: true
   api-gateway:
     image: localhost:4800/may-server-gateway
     tags:
       - local-${devspace.git.commit}
     cmd: [yarn, nx, run, server-gateway:serve]
+    context: './'
+    build:
+      buildKit:
+        inCluster: {}
     #build:
       #buildKit:
         #skipPush: true
