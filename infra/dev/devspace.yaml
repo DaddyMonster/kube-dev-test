@@ -8,13 +8,13 @@ images:
   #      buildKit:
   #        skipPush: true
   may-journey-web:
-    image: localhost:4800/may-journey-web:local
+    image: localhost:4800/may-journey-web
     cmd: [yarn, nx, run, web-journey:serve]
     build:
       buildKit:
         skipPush: true
   api-gateway:
-    image: localhost:4800/may-server-gateway:local
+    image: localhost:4800/may-server-gateway
     cmd: [yarn, nx, run, server-gateway:serve]
     build:
       buildKit:
@@ -34,9 +34,9 @@ dev:
   # `dev.ports` specifies all ports that should be forwarded while `devspace dev` is running
   # Port-forwarding lets you access your application via localhost on your local machine
   ports:
-    - imageSelector: localhost:4800/may-journey-web:local # Select the Pod that runs our `${IMAGE}`
+    - imageSelector: localhost:4800/may-journey-web # Select the Pod that runs our `${IMAGE}`
       forward:
         - port: 6400
-    - imageSelector: localhost:4800/may-server-gateway:local
+    - imageSelector: localhost:4800/may-server-gateway
       forward:
         - port: 6500
