@@ -13,3 +13,6 @@ service:
   type: ClusterIP
   port: 6400
   targetPort: 6400
+
+ingress:
+  enabled: false
