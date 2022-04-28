@@ -1,0 +1,9 @@
+{{- include "lib.ingress" . }}
+---
+{{- include "lib.service" . }}
+---
+{{- include "lib.deployment" . }}
+---
+{{- include "lib.hpa" . }}
+---
+{{- include "lib.serviceaccount" . }}

@@ -1,0 +1,15 @@
+replicaCount: 1
+
+image:
+  repository: localhost:4800/server-gateway:local
+  pullPolicy: IfNotPresent
+
+#ports:
+#  - name: http
+#    containerPort: 7400
+#    protocal: TCP
+
+service:
+  type: ClusterIP
+  port: 6500
+  targetPort: 6500
