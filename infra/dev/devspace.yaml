@@ -27,11 +27,19 @@ deployments:
   - name: may-journey-web
     helm:
       chart:
-        name: ./infra/helm/may-journey-web
+        git:
+          url: https://github.com/DaddyMonster/kube-dev-test.git
+          branch: main
+          tag: latest
+          subPath: infra/helm/may-journey-web
   - name: server-gateway
     helm:
       chart:
-        name: "./infra/helm/server-gateway"
+        git:
+          url: https://github.com/DaddyMonster/kube-dev-test.git
+          branch: main
+          tag: latest
+          subPath: infra/helm/server-gateway
 
 dev:
   # `dev.ports` specifies all ports that should be forwarded while `devspace dev` is running
