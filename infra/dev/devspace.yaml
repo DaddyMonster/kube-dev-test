@@ -14,8 +14,8 @@ images:
     cmd: [yarn, nx, run, web-journey:serve]
     context: './'
     dockerfile: ./Dockerfile
-    #build:
-      #buildKit:
+    build:
+      buildKit: {}
         #skipPush: true
   api-gateway:
     image: localhost:4800/may-server-gateway
@@ -24,6 +24,8 @@ images:
     cmd: [yarn, nx, run, server-gateway:serve]
     context: './'
     dockerfile: ./Dockerfile
+    build:
+      buildKit: {}
     #build:
       #buildKit:
         #skipPush: true
