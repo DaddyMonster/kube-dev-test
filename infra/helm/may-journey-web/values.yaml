@@ -16,3 +16,20 @@ service:
 
 ingress:
   enabled: false
+
+autoscaling:
+  enabled: false
+
+
+nameOverride: ""
+fullnameOverride: ""
+serviceAccount:
+  create: false
+  annotations: {}
+  #name: ""
+securityContext: {}
+podAnnotations: {}
+podSecurityContext: {}
+nodeSelector: {}
+tolerations: []
+affinity: {}
