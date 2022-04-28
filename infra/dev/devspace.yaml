@@ -17,6 +17,7 @@ images:
         skipPush: true
   api-gateway:
     image: localhost:4800/may-server-gateway
+    tags:
       - local-${devspace.git.commit}
     cmd: [yarn, nx, run, server-gateway:serve]
     build:
