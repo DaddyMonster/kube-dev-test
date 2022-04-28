@@ -13,6 +13,7 @@ images:
       - local-${devspace.git.commit}
     cmd: [yarn, nx, run, web-journey:serve]
     context: './'
+    dockerfile: ./Dockerfile
     #build:
       #buildKit:
         #skipPush: true
@@ -22,6 +23,7 @@ images:
       - local-${devspace.git.commit}
     cmd: [yarn, nx, run, server-gateway:serve]
     context: './'
+    dockerfile: ./Dockerfile
     #build:
       #buildKit:
         #skipPush: true
