@@ -1,34 +1,13 @@
 version: v1beta11
 
 images:
-  #  may-base:
-  #    image: localhost:4800/may-base:local
-  #    cmd: [yarn, nx, run, web-journey:serve]
-  #    build:
-  #      buildKit:
-  #        skipPush: true
-  may-journey-web:
-    image: localhost:4800/may-journey-web
-    tags:
-      - local-${devspace.git.commit}
+  may-base:
+    image: localhost:5000/may-base:local
     cmd: [yarn, nx, run, web-journey:serve]
-    context: './'
-    dockerfile: ./Dockerfile
     build:
-      buildKit: {}
-        #skipPush: true
-  api-gateway:
-    image: localhost:4800/may-server-gateway
-    tags:
-      - local-${devspace.git.commit}
-    cmd: [yarn, nx, run, server-gateway:serve]
-    context: './'
-    dockerfile: ./Dockerfile
-    build:
-      buildKit: {}
-    #build:
-      #buildKit:
-        #skipPush: true
+      buildKit:
+      skipPush: true
+
 deployments:
   - name: may-journey-web
     helm:
