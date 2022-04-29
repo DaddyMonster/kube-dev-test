@@ -22,6 +22,16 @@ deployments:
     helm:
       chart:
         name: ingress-nginx/ingress-nginx
-      valuesFiles:
-        - infra/helm/nginx/values.yaml
+      values:
+        controller:
+          metrics:
+            enabled: true
+            service:
+              annotations:
+                prometheus.io/port: "10254"
+                prometheus.io/scrape: "true"
+            serviceMonitor:
+              enabled: true
+              additionalLabels:
+                release: monitor
       wait: true
