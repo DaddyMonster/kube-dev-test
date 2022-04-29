@@ -25,13 +25,13 @@ deployments:
       values:
         controller:
           metrics:
-            enabled: true
-            service:
-              annotations:
-                prometheus.io/port: "10254"
-                prometheus.io/scrape: "true"
+            enabled: false
+            #service:
+            #  annotations:
+            #    prometheus.io/port: "10254"
+            #    prometheus.io/scrape: "true"
             serviceMonitor:
-              enabled: true
-              additionalLabels:
-                release: monitor
+              enabled: false
+            #  additionalLabels:
+            #    release: monitor
       wait: true
