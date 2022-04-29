@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: localhost:4800/server-gateway
+  repository: k3d-registry:5000/server-gateway
   pullPolicy: IfNotPresent
 
 #ports:

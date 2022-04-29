@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: localhost:4800/may-journey-web
+  repository: k3d-registry:5000/may-journey-web
   pullPolicy: IfNotPresent
 
 #ports:
