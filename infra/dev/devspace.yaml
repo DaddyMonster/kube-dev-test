@@ -17,14 +17,12 @@ deployments:
           branch: main
           tag: latest
           subPath: infra/helm/server-gateway
-
-dev:
-  # `dev.ports` specifies all ports that should be forwarded while `devspace dev` is running
-  # Port-forwarding lets you access your application via localhost on your local machine
-  ports:
-    - imageSelector: localhost:4800/may-journey-web # Select the Pod that runs our `${IMAGE}`
-      forward:
-        - port: 6400
-    - imageSelector: localhost:4800/may-server-gateway
-      forward:
-        - port: 6500
+  - name: ingress-nginx
+    namespace: ingress-nginx
+    helm:
+      chart:
+        git:
+          url: https://github.com/DaddyMonster/kube-dev-test.git
+          branch: main
+          tag: latest
+          subPath: infra/helm/nginx

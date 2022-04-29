@@ -15,11 +15,16 @@ service:
   targetPort: 6400
 
 ingress:
-  enabled: false
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: localhost
+      paths:
+        - path: /
+          pathType: Prefix
 
 autoscaling:
   enabled: false
-
 
 nameOverride: ""
 fullnameOverride: ""

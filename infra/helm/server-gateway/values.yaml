@@ -16,7 +16,14 @@ service:
 
 
 ingress:
-  enabled: false
+  enabled: true
+  className: "nginx"
+  hosts:
+    - host: localhost
+      paths:
+        - path: /api
+          pathType: Prefix
+
 
 autoscaling:
   enabled: false
