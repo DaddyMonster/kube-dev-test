@@ -21,8 +21,7 @@ deployments:
     namespace: ingress-nginx
     helm:
       chart:
-        git:
-          url: https://github.com/DaddyMonster/kube-dev-test.git
-          branch: main
-          tag: latest
-          subPath: infra/helm/nginx
+        name: ingress-nginx/ingress-nginx
+      valuesFiles:
+        - https://github.com/DaddyMonster/kube-dev-test.git/infra/helm/nginx/values.yaml
+      wait: true
