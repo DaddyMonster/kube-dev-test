@@ -23,5 +23,5 @@ deployments:
       chart:
         name: ingress-nginx/ingress-nginx
       valuesFiles:
-        - https://github.com/DaddyMonster/kube-dev-test.git/infra/helm/nginx/values.yaml
+        - infra/helm/nginx/values.yaml
       wait: true
